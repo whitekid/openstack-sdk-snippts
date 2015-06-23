@@ -3,7 +3,7 @@ import os
 import keystoneclient.v2_0.client as kclient
 from neutronclient.v2_0 import client as neutronclient
 
-def main():
+def basic_auth():
     keystone = kclient.Client(
         auth_url = os.environ.get('OS_AUTH_URL'),
         username = os.environ.get('OS_USERNAME'),
@@ -20,4 +20,4 @@ def main():
     print neutron.list_networks()
 
 if __name__ == '__main__':
-    main()
+    basic_auth()
